@@ -60,9 +60,7 @@
 			background-repeat: no-repeat;}
 
 		.back2{margin-top: 20px; margin-bottom: 20px;
-			width: 100vw; height: auto; 
-			/*100%로 하니까 section에 줬던 1200px이 적용된건지 옆이 잘려서 나와서 vw를 시도했으나 똑같음->
-			알고보니 width702가 문제라 back2의 순서를 바꿈으로서 background가 화면 가로에 가득 차는 것엔 성공했으나 이미지가 커짐...*/
+			width: 100vw; height: 700px; 
 			background:black;
 			background-size: 100%;
 			background-repeat: no-repeat;}
@@ -70,6 +68,7 @@
 
 		.angry{padding-top: 180px;}
 		.full{width: 100%}
+
 
 /*폰트 컬러*/
 		.white{color: #FFFFFF;}
@@ -82,7 +81,8 @@
 		.green6{color: #366a36;}
 		.green7{color: #3f513d;}
 
-		.bttani{animation:btt 1.5s; }
+		.bttani{animation:btt 1.5s; 
+				animation-fill-mode: forwards; }
 		@keyframes btt{
 			from{opacity: 0; margin-top: 80px;}
 			to{opacity: 1; margin-top: 0px;}
@@ -90,7 +90,14 @@
 
 		.imgswap img:last-child{display:none}
 		.imgswap:hover img:first-child{display:none}
-		.imgswap:hover img:last-child{display:inline-block}
+		.imgswap:hover img:last-child{display:block}
+		.imgswapimg1{width: auto;height: 300px; padding-top: 200px; padding-bottom: 200px;}
+		.imgswapimg2{width: auto;height: 600px;}
+	
+	/*호버 코드 봐주시면 됩니다,,!
+		.a:hover ~ .b{display:block}
+		.b{display: none;}
+		*/
 	</style>
 </head>
 <body>
@@ -138,8 +145,8 @@
 		</section>
 
 		<div class='imgswap width702 back2 wow bttani'>
-		<img src="5.png">
-		<img src="6.png"> 호버하면 사이즈가 달라짐+진단서가 왼쪽으로 쏠리는 현상
+		<img class='imgswapimg1' src="5.png">
+		<img class='imgswapimg2'src="6.png">
 		</div>
 
 	<section>	
@@ -148,7 +155,7 @@
 		<h3 class="green5 wow bttani">진짜 분조장이 아니라면, 요즘 사람들이 화를 내게 되는 이유는 뭘까. <br>
 		여러 이유가 있겠지만 그중 체감되는 몇 가지를 정리해봤다.<br>
 		</h3>
-<img class='full wow bttani' src="8.png">
+	<img class='full wow bttani' src="8.png">
 		<h4 class="green5 wow bttani">스트레스</h4>
 			
 		<h3 class="green5 wow bttani">개개인 성향이 화가 많게 변했다기보단, 가정, 학교, 사회 등 매일 <br>
